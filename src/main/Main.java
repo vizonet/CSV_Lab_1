@@ -24,14 +24,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception { // запуск главного окна программы
-        /** // параметры командной строки
+        /*
+        // параметры командной строки
         Application.Parameters params = getParameters();
         List<String> unnamedParams = getParameters().getUnnamed();
         int i =0;
         for(String param: unnamedParams){
             i++;
             System.out.printf("%d - %s \n", i, param);
-        }*/
+        }
+        */
         window_init(stage,"Linear spatial filtering","../resources/spatial_filter");
         set_icon("../resources/icon.jpg", stage);
     }
@@ -48,15 +50,17 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        /** // проверка библиотеки OpenCV
+        // проверка библиотеки OpenCV
+        System.out.println("проверка библиотеки OpenCV");
         System.out.println(Core.VERSION); // 3.3.0
         System.out.println(Core.VERSION_MAJOR); // 3
         System.out.println(Core.VERSION_MINOR); // 3
         System.out.println(Core.VERSION_REVISION); // 0
         System.out.println(Core.NATIVE_LIBRARY_NAME); // opencv_java
         System.out.println(Core.getBuildInformation());
-        */
-        launch(args);// запуск окна программы
+        System.out.println("-----------");
+
+        launch(args); // запуск программы
     }
 
     public static Parent loadFXML(String fxml) throws IOException { // загрузчик fxml-шаблонов
@@ -75,8 +79,10 @@ public class Main extends Application {
     public void set_icon(String icon_path, Stage stage) {
         // вывод иконки окна
         InputStream iconStream = getClass().getResourceAsStream(icon_path);
-        Image icon = new Image(iconStream);
-        stage.getIcons().add(icon);
+        if (iconStream != null) {
+            Image icon = new Image(iconStream);
+            stage.getIcons().add(icon);
+        }
     }
 }
 

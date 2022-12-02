@@ -11,14 +11,11 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/PROGRAMS/LIBs/OpenCV/opencv_3.3.0/build/java/opencv-330.jar!/" />
+          <root url="jar://C:/_PROGRAMS/_LIB/openCV/opencv_330/build/java/opencv-330.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <NATIVE>
-          <root url="file://C:/PROGRAMS/LIBs/OpenCV/opencv_3.3.0/build/java/x64" />
-        </NATIVE>
         <SOURCES>
-          <root url="jar://C:/PROGRAMS/LIBs/OpenCV/opencv_3.3.0/build/java/opencv-330.jar!/" />
+          <root url="jar://C:/_PROGRAMS/_LIB/openCV/opencv_330/build/java/opencv-330.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
