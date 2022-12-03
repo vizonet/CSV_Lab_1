@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.About">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.About">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -75,7 +75,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="80.0" layoutY="146.0" text="Высоцкий Евгений, АММ-19">
+            <Label layoutX="80.0" layoutY="146.0" text="Высоцкий Евгений, АММ-21">
                <font>
                   <Font name="Cambria" size="16.0" />
                </font>
@@ -92,7 +92,7 @@
                         <Font name="Cambria" size="16.0" />
                      </font>
                   </Label>
-                  <Label layoutX="27.0" layoutY="29.0" prefHeight="20.0" prefWidth="37.0" text="2021">
+                  <Label layoutX="27.0" layoutY="29.0" prefHeight="20.0" prefWidth="37.0" text="2022">
                      <font>
                         <Font name="Cambria" size="16.0" />
                      </font>

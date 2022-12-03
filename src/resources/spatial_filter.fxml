@@ -13,8 +13,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import java.util.ArrayList?>
-
 <!--
 editable="true" amountToStepBy="1" initialValue="0" max="255" min="-255"
 editable="true" amountToStepBy="1" initialValue="0" max="255" min="-255"
@@ -27,27 +25,28 @@ editable="true" amountToStepBy="1" initialValue="0" max="255" min="-255"
 editable="true" amountToStepBy="1" initialValue="0" max="255" min="-255"
 -->
 
-<AnchorPane prefHeight="500.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+<?import java.util.ArrayList?>
+<AnchorPane prefHeight="709.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
    <children>
       <Pane layoutX="259.0" layoutY="58.0" prefHeight="91.0" prefWidth="151.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="68.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="98.0" text="Original" textAlignment="CENTER" wrapText="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="127.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="98.0" text="Original" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Lucida Fax Demibold" size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="291.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="98.0" text="Grayscale" textAlignment="CENTER" wrapText="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="481.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="98.0" text="Grayscale" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Lucida Fax Demibold" size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="497.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="129.0" text="Filter matrix" textAlignment="CENTER" wrapText="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="754.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="129.0" text="Filter matrix" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Lucida Fax Demibold" size="18.0" />
          </font>
       </Label>
       <Group layoutX="18.0" layoutY="58.0">
          <children>
-            <ImageView fx:id="originalImg" fitHeight="150.0" fitWidth="200.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="originalImg" fitHeight="260.0" fitWidth="337.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@empty_img.png" />
                </image>
@@ -55,7 +54,7 @@ editable="true" amountToStepBy="1" initialValue="0" max="255" min="-255"
                   <InnerShadow />
                </effect>
             </ImageView>
-            <ImageView fx:id="grayscaleImg" fitHeight="150.0" fitWidth="200.0" layoutX="222.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="apply1Img" fitHeight="260.0" fitWidth="337.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@empty_img.png" />
                </image>
@@ -63,49 +62,20 @@ editable="true" amountToStepBy="1" initialValue="0" max="255" min="-255"
                   <InnerShadow />
                </effect>
             </ImageView>
-            <ImageView fx:id="apply1Img" fitHeight="150.0" fitWidth="200.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@empty_img.png" />
-               </image>
-               <effect>
-                  <InnerShadow />
-               </effect>
-            </ImageView>
-            <ImageView fx:id="apply2Img" fitHeight="150.0" fitWidth="200.0" layoutX="222.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@empty_img.png" />
-               </image>
-               <effect>
-                  <InnerShadow />
-               </effect>
-            </ImageView>
-            <Button onAction="#load_image" layoutX="61.0" layoutY="156.0" mnemonicParsing="false" text="New image" />
-            <Button onAction="#save_grayscale" layoutX="284.0" layoutY="156.0" mnemonicParsing="false" text="Save image" />
-            <Button onAction="#save_apply1" layoutX="62.0" layoutY="405.0" mnemonicParsing="false" text="Save image" />
-            <Button onAction="#save_apply2" layoutX="284.0" layoutY="405.0" mnemonicParsing="false" text="Save image" />
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="204.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="88.0" text="Apply 1:" textAlignment="CENTER" wrapText="true">
+            <Button layoutX="124.0" layoutY="254.0" mnemonicParsing="false" onAction="#load_image" text="Load image" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="297.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="88.0" text="Slot 1:" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Lucida Fax Demibold" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="preset1" layoutX="98.0" layoutY="210.0" text="empty" textFill="#33a0ff">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="224.0" layoutY="204.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="88.0" text="Apply 2:" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Lucida Fax Demibold" size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="preset2" layoutX="320.0" layoutY="210.0" text="empty" textFill="#33a0ff">
+            <Label fx:id="preset1" layoutX="88.0" layoutY="301.0" text="empty" textFill="#33a0ff">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
          </children>
       </Group>
-      <Group layoutX="463.0" layoutY="6.0">
+      <Group layoutX="720.0" layoutY="6.0">
          <children>
             <VBox layoutY="42.0" prefHeight="93.0" prefWidth="197.0">
                <children>
@@ -138,7 +108,7 @@ editable="true" amountToStepBy="1" initialValue="0" max="255" min="-255"
                </font>
             </Label>
          </children>
-         <!-- use a define block to define an array list containing the Spinners: -->
+         <!-- use define block to define an array list containing the Spinners: -->
          <fx:define>
             <ArrayList fx:id="spArray">
                <fx:reference source="sp0" />
@@ -154,39 +124,65 @@ editable="true" amountToStepBy="1" initialValue="0" max="255" min="-255"
          </fx:define>
       </Group>
       <Group layoutX="176.0" layoutY="511.0" />
-      <Group layoutX="533.0" layoutY="172.0">
-         <children>
-            <Spinner fx:id="spOffset" layoutX="40.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="65.0" />
-            <Label layoutY="5.0" text="Offset:" />
-         </children>
-      </Group>
-      <Group layoutX="463.0" layoutY="215.0">
-         <children>
-            <Button minWidth="0.0" mnemonicParsing="false" onAction="#Apply1" prefHeight="25.0" prefWidth="80.0" text="Apply 1" textAlignment="CENTER" />
-            <Button layoutX="117.0" minWidth="0.0" mnemonicParsing="false" onAction="#Apply2" prefHeight="25.0" prefWidth="80.0" text="Apply 2" textAlignment="CENTER" />
-         </children>
-      </Group>
-      <Group layoutX="463.0" layoutY="263.0">
-         <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="59.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="78.0" text="Presets" textAlignment="CENTER" wrapText="true">
-               <font>
-                  <Font name="Lucida Fax Demibold" size="18.0" />
-               </font>
-            </Label>
-            <Button onAction="#zeroMatrix" layoutY="34.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="92.0" text="Zero Matrix" textFill="RED" />
-            <Button onAction="#negative" layoutX="104.0" layoutY="34.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="92.0" text="Negative" />
-            <Button onAction="#blur" layoutX="1.0" layoutY="75.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="92.0" text="BLUR" />
-            <Button onAction="#lightBlur" layoutX="104.0" layoutY="75.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="92.0" text="Light BLUR" />
-            <Button onAction="#emboss" layoutX="1.0" layoutY="159.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="92.0" text="EMBOSS" />
-            <Button onAction="#lightEmboss" layoutX="104.0" layoutY="159.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="92.0" text="Light EMBOSS" />
-            <Button onAction="#sharpen" layoutX="1.0" layoutY="117.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="92.0" text="SHARPEN" />
-            <Button onAction="#lightSharpen" layoutX="104.0" layoutY="117.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="92.0" text="Light SHARPEN">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </Button>
-         </children>
-      </Group>
-      <Button onAction="#about" layoutX="580.0" layoutY="468.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" text="About" />
+      <Group layoutX="533.0" layoutY="172.0" />
+      <Group layoutX="720.0" layoutY="213.0" />
+      <Group layoutX="463.0" layoutY="263.0" />
+      <Button layoutX="832.0" layoutY="663.0" mnemonicParsing="false" onAction="#about" prefHeight="26.0" prefWidth="92.0" text="About" />
+      <Button layoutX="728.0" layoutY="611.0" mnemonicParsing="false" onAction="#canny" prefHeight="26.0" prefWidth="197.0" text="Canny edges detector -&gt; Slot 1" />
+      <Spinner fx:id="spOffset" layoutX="807.0" layoutY="172.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="65.0" />
+      <Label layoutX="767.0" layoutY="177.0" text="Offset:" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="756.0" layoutY="351.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="138.0" text="Filter Presets" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Lucida Fax Demibold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="727.0" layoutY="386.0" mnemonicParsing="false" onAction="#zeroMatrix" prefHeight="26.0" prefWidth="92.0" text="Zero Matrix" textFill="RED" />
+      <Button layoutX="831.0" layoutY="386.0" mnemonicParsing="false" onAction="#negative" prefHeight="26.0" prefWidth="92.0" text="Negative" />
+      <Button layoutX="728.0" layoutY="427.0" mnemonicParsing="false" onAction="#blur" prefHeight="26.0" prefWidth="92.0" text="BLUR" />
+      <Button layoutX="831.0" layoutY="427.0" mnemonicParsing="false" onAction="#lightBlur" prefHeight="26.0" prefWidth="92.0" text="Light BLUR" />
+      <Button layoutX="728.0" layoutY="511.0" mnemonicParsing="false" onAction="#emboss" prefHeight="26.0" prefWidth="92.0" text="EMBOSS" />
+      <Button layoutX="831.0" layoutY="511.0" mnemonicParsing="false" onAction="#lightEmboss" prefHeight="26.0" prefWidth="92.0" text="Light EMBOSS" />
+      <Button layoutX="728.0" layoutY="469.0" mnemonicParsing="false" onAction="#sharpen" prefHeight="26.0" prefWidth="92.0" text="SHARPEN" />
+      <Button layoutX="831.0" layoutY="469.0" mnemonicParsing="false" onAction="#lightSharpen" prefHeight="26.0" prefWidth="92.0" text="Light SHARPEN">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="grayscaleImg" fitHeight="253.0" fitWidth="337.0" layoutX="362.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@empty_img.png" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="apply2Img" fitHeight="264.0" fitWidth="337.0" layoutX="362.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@empty_img.png" />
+         </image>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </ImageView>
+      <Button layoutX="494.0" layoutY="311.0" mnemonicParsing="false" onAction="#save_grayscale" text="Save image" />
+      <Button layoutX="138.0" layoutY="651.0" mnemonicParsing="false" onAction="#save_apply1" text="Save image" />
+      <Button layoutX="494.0" layoutY="651.0" mnemonicParsing="false" onAction="#save_apply2" text="Save image" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="362.0" layoutY="353.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="88.0" text="Slot 2:" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Lucida Fax Demibold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="preset2" layoutX="451.0" layoutY="358.0" text="empty" textFill="#33a0ff">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="762.0" layoutY="570.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="138.0" text="OpenCV tools " textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Lucida Fax Demibold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="728.0" layoutY="249.0" minWidth="0.0" mnemonicParsing="false" onAction="#Apply1" prefHeight="26.0" prefWidth="92.0" text="Apply  Slot 1" textAlignment="CENTER" />
+      <Button layoutX="830.0" layoutY="249.0" minWidth="0.0" mnemonicParsing="false" onAction="#Apply2" prefHeight="26.0" prefWidth="92.0" text="Apply Slot 2" textAlignment="CENTER" />
    </children>
 </AnchorPane>
