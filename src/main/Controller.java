@@ -513,7 +513,7 @@ public class Controller implements Initializable {
 
     // Не применяется
     /*
-    private boolean openFile(File file) { // Открыть файл (открывает системное проиложение, сопоставленное с типом файла)
+    private boolean openFile(File file) { // Открыть файл (открывает системное приложение, сопоставленное с типом файла)
         boolean result = true;
         try {
             desktop.open(file);
