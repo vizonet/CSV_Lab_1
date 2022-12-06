@@ -70,7 +70,7 @@
                   <Font name="Monotype Corsiva" size="28.0" />
                </font>
             </Label>
-            <Label layoutX="38.0" layoutY="53.0" text="- лабораторная работа по дисциплине">
+            <Label layoutX="38.0" layoutY="53.0" text="Лабораторная работа по дисциплине">
                <font>
                   <Font size="16.0" />
                </font>
