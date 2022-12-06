@@ -34,7 +34,7 @@ public class Main extends Application {
             System.out.printf("%d - %s \n", i, param);
         }
         */
-        window_init(stage,"Linear spatial filtering","../resources/spatial_filter");
+        window_init(stage,"Linear spatial filter and edges detecting","../resources/spatial_filter");
         set_icon("../resources/icon.jpg", stage);
     }
 
@@ -50,16 +50,17 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        /*
         // проверка библиотеки OpenCV
-        System.out.println("проверка библиотеки OpenCV");
-        System.out.println(Core.VERSION); // 3.3.0
-        System.out.println(Core.VERSION_MAJOR); // 3
-        System.out.println(Core.VERSION_MINOR); // 3
-        System.out.println(Core.VERSION_REVISION); // 0
-        System.out.println(Core.NATIVE_LIBRARY_NAME); // opencv_java
-        System.out.println(Core.getBuildInformation());
+        System.out.println("Проверка библиотеки OpenCV");
+        System.out.println(Core.VERSION);               // 3.3.0
+        System.out.println(Core.VERSION_MAJOR);         // 3
+        System.out.println(Core.VERSION_MINOR);         // 3
+        System.out.println(Core.VERSION_REVISION);      // 0
+        System.out.println(Core.NATIVE_LIBRARY_NAME);   // opencv_java
+        System.out.println(Core.getBuildInformation()); // build info
         System.out.println("-----------");
-
+        */
         launch(args); // запуск программы
     }
 
@@ -77,7 +78,7 @@ public class Main extends Application {
     }
 
     public void set_icon(String icon_path, Stage stage) {
-        // вывод иконки окна
+        // Вывод иконки окна
         InputStream iconStream = getClass().getResourceAsStream(icon_path);
         if (iconStream != null) {
             Image icon = new Image(iconStream);
